@@ -1,6 +1,6 @@
 hello:
   path: /hello
-  defaults: { _controller: MyController::helloAction }
+  defaults: { _controller: myC::helloAction }
   methods: [GET]
 
 world:

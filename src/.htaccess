@@ -1,7 +1,7 @@
 # Turn on the RewriteEngine
 RewriteEngine On
 
-RewriteBase /
+RewriteBase /framework/src
 
 #  Redirect to index.php
 RewriteCond %{REQUEST_FILENAME} !-f
