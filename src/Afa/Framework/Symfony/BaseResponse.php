@@ -2,7 +2,7 @@
 
 namespace Afa\Framework\Symfony;
 
-class BaseResponse implements \Afa\Framework\Http\IResponse
+class BaseResponse implements \Afa\Framework\IResponse
 {
     /**
      * @var \Symfony\Component\HttpFoundation\Response

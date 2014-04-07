@@ -7,7 +7,7 @@ class MyController
 {
     public function helloAction(\Afa\Framework\IRequest $request)
     {
-        var_dump($request);
+        new oK();
     }
 
 }

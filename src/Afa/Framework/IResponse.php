@@ -1,6 +1,6 @@
 <?php
 
-namespace Afa\Framework\Http;
+namespace Afa\Framework;
 
 interface IResponse
 {

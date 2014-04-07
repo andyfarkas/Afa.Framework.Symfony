@@ -26,9 +26,20 @@ class JsonResponseFactory implements \Afa\Framework\IResponseFactory
      */
     public function createOkResponse(array $data)
     {
-        $symfonyResponse = new \Symfony\Component\HttpFoundation\JsonResponse($data);
+        return $this->createResponseWithCode($data, 200);
+    }
+
+    protected function createResponseWithCode(array $data, $code)
+    {
+        $symfonyResponse = new \Symfony\Component\HttpFoundation\JsonResponse($data, $code);
         $symfonyResponse->prepare($this->request);
-        $response = new \Afa\Framework\Symfony\Response\BaseResponse($symfonyResponse);
+        $response = new BaseResponse($symfonyResponse);
         return $response;
     }
+
+    public function createServerErrorResponse(array $data)
+    {
+        return $this->createResponseWithCode($data, 500);
+    }
+
 }
