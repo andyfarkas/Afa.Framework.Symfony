@@ -1,4 +1,4 @@
 services:
-  MyController:
-    class: MyControllerClass
+  myController:
+    class: MyController
     shared: true
