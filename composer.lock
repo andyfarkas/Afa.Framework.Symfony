@@ -3,11 +3,8 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "559a311dbf0b1c3b2d6f96ae20482486",
+    "hash": "68cdb7b10ad89d13dc7e66656e8edeaa",
     "packages": [
-
-    ],
-    "packages-dev": [
         {
             "name": "afa/framework",
             "version": "dev-master",
@@ -589,10 +586,13 @@
             "time": "2014-03-12 18:29:58"
         }
     ],
+    "packages-dev": [
+
+    ],
     "aliases": [
 
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "afa/framework": 20
     },

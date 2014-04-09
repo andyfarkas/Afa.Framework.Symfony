@@ -46,11 +46,6 @@ class DiAwareControllerResolver extends \Symfony\Component\HttpKernel\Controller
         list($class, $method) = explode('::', $controller, 2);
 
         $controller = $this->container->get($class);
-
-        if (!class_exists($class)) {
-            throw new \InvalidArgumentException(sprintf('Class "%s" does not exist.', $class));
-        }
-
         return array($controller, $method);
     }
 
