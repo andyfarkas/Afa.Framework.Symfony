@@ -1,4 +1,0 @@
-services:
-  myController:
-    class: MyController
-    shared: true

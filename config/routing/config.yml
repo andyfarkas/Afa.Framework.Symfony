@@ -1,9 +1,0 @@
-hello:
-  path: /hello
-  defaults: { _controller: myController::helloAction }
-  methods: [GET]
-
-world:
-  path: /world
-  defaults: { _controller: myController::worldAction }
-  methods: [GET]

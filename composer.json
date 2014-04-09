@@ -1,5 +1,5 @@
 {
-    "name": "afa/scraper",
+    "name": "afa/framework.symfony",
     "autoload": {
         "psr-4": {"": "src\\"}
     },
