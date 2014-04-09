@@ -10,13 +10,22 @@ class DiAwareControllerResolver extends \Symfony\Component\HttpKernel\Controller
     protected $container;
 
     /**
+     * @var \Afa\Framework\Request\Model\IModelResolver
+     */
+    protected $modelResolver;
+
+    /**
      * @param \Symfony\Component\DependencyInjection\Container $container
+     * @param \Afa\Framework\Request\Model\IModelResolver $modelResolver
      * @param \Symfony\Component\HttpKernel\Log\LoggerInterface $logger
      */
-    public function __construct(\Symfony\Component\DependencyInjection\Container $container, \Symfony\Component\HttpKernel\Log\LoggerInterface $logger = null)
+    public function __construct(\Symfony\Component\DependencyInjection\Container $container,
+                                \Afa\Framework\Request\Model\IModelResolver $modelResolver,
+                                \Symfony\Component\HttpKernel\Log\LoggerInterface $logger = null)
     {
         parent::__construct($logger);
         $this->container = $container;
+        $this->modelResolver = $modelResolver;
     }
 
     /**
@@ -62,6 +71,8 @@ class DiAwareControllerResolver extends \Symfony\Component\HttpKernel\Controller
                 $arguments[] = $attributes[$param->name];
             } elseif ($param->getClass() && $param->getClass()->isInstance($request)) {
                 $arguments[] = $request;
+            } elseif ($param->getClass()->implementsInterface('Afa\Framework\Request\IModel')) {
+                $arguments[] = $this->modelResolver->resolve($param->getClass()->getName());
             } elseif ($param->isDefaultValueAvailable()) {
                 $arguments[] = $param->getDefaultValue();
             } else {

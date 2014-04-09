@@ -2,7 +2,7 @@
 
 namespace Afa\Framework\Symfony;
 
-class BaseResponse implements \Afa\Framework\IResponse
+class JsonResponse implements \Afa\Framework\IResponse
 {
     /**
      * @var \Symfony\Component\HttpFoundation\Response
@@ -10,9 +10,9 @@ class BaseResponse implements \Afa\Framework\IResponse
     protected $symfonyResponse;
 
     /**
-     * @param \Symfony\Component\HttpFoundation\Response $response
+     * @param \Symfony\Component\HttpFoundation\JsonResponse $response
      */
-    public function __construct(\Symfony\Component\HttpFoundation\Response $response)
+    public function __construct(\Symfony\Component\HttpFoundation\JsonResponse $response)
     {
         $this->symfonyResponse = $response;
     }
