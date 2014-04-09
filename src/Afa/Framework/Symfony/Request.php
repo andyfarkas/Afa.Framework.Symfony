@@ -17,4 +17,13 @@ class Request implements \Afa\Framework\IRequest
         $this->symfonyRequest = $request;
     }
 
+    /**
+     * @param string $key
+     * @throws \InvalidArgumentException
+     * @return mixed
+     */
+    public function get($key)
+    {
+        return $this->symfonyRequest->get($key);
+    }
 }
