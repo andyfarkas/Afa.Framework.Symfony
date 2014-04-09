@@ -3,8 +3,34 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "06e32107452bc5e70d0d4d342768a6ff",
+    "hash": "f96c4bda3a8cc52b8dd1f8a79ccd5b68",
     "packages": [
+        {
+            "name": "afa/framework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andyfarkas/Afa.Framework.git",
+                "reference": "a2f773e08de5f9a25db88d1fa69489058765e3ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andyfarkas/Afa.Framework/zipball/a2f773e08de5f9a25db88d1fa69489058765e3ec",
+                "reference": "a2f773e08de5f9a25db88d1fa69489058765e3ec",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "": "src\\"
+                }
+            },
+            "support": {
+                "source": "https://github.com/andyfarkas/Afa.Framework/tree/master",
+                "issues": "https://github.com/andyfarkas/Afa.Framework/issues"
+            },
+            "time": "2014-04-09 11:37:18"
+        },
         {
             "name": "psr/log",
             "version": "1.0.0",
@@ -567,9 +593,9 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "afa/framework": 20
+    },
     "platform": [
 
     ],
