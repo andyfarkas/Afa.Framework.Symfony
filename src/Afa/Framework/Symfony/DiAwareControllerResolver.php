@@ -60,12 +60,11 @@ class DiAwareControllerResolver extends \Symfony\Component\HttpKernel\Controller
     {
         $attributes = $symfonyRequest->attributes->all();
         $arguments = array();
-        $request = new Request($symfonyRequest);
         foreach ($parameters as $param) {
             if (array_key_exists($param->name, $attributes)) {
                 $arguments[] = $attributes[$param->name];
-            } elseif ($param->getClass() && $param->getClass()->isInstance($request)) {
-                $arguments[] = $request;
+            } elseif ($param->getClass() && $param->getClass()->isInstance($symfonyRequest)) {
+                $arguments[] = $symfonyRequest;
             } elseif ($param->getClass()->implementsInterface('Afa\Framework\Request\IModel')) {
                 $arguments[] = $this->modelResolver->resolve($param->getClass()->getName());
             } elseif ($param->isDefaultValueAvailable()) {

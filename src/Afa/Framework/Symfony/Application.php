@@ -32,8 +32,7 @@ class Application implements \Afa\Framework\IApplication
 
         try
         {
-            $responseData = $this->handleRequest($request);
-            $response = $this->responseFactory->createOkResponse($responseData);
+            $response = $this->handleRequest($request);
         }
         catch (\Afa\Framework\Exception\NotFoundException $e)
         {
@@ -139,16 +138,9 @@ class Application implements \Afa\Framework\IApplication
             throw new \Afa\Framework\Exception\BadRequestException('Requested resource is not valid.');
         }
 
-
         $arguments = $resolver->getArguments($request, $controller);
+        $response = call_user_func_array($controller, $arguments);
 
-        $responseData = call_user_func_array($controller, $arguments);
-
-        if (!is_array($responseData))
-        {
-            throw new \RuntimeException('Unexpected response from ' . $request->attributes->get('_controller') . '. Array expected.');
-        }
-
-        return $responseData;
+        return $response;
     }
 }
